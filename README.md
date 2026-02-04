@@ -1,6 +1,6 @@
-# Gitpy
+# GitLoom
 
-Gitpy is a Python tool and library that syncs a local folder to a GitHub repository and keeps it updated. It watches for file changes and automatically commits + pushes updates when you save files.
+GitLoom is a Python tool and library that syncs a local folder to a GitHub repository and keeps it updated. It watches for file changes and automatically commits + pushes updates when you save files.
 
 ## Features
 
@@ -18,52 +18,52 @@ Gitpy is a Python tool and library that syncs a local folder to a GitHub reposit
 ## Installation
 
 ```bash
-pip install gitpy
+pip install gitloom
 ```
 
 ## Quick start
 
 ```bash
 # Initialize and connect a folder to a GitHub repo
-gitpy init --repo-path . --remote git@github.com:your-org/your-repo.git
+gitloom init --repo-path . --remote git@github.com:your-org/your-repo.git
 
 # One-time sync
-gitpy sync --repo-path .
+gitloom sync --repo-path .
 
 # Watch for changes and auto-sync
-gitpy watch --repo-path .
+gitloom watch --repo-path .
 ```
 
 ## CLI commands
 
-### `gitpy init`
+### `gitloom init`
 
 Initializes a git repository (if missing) and sets the remote.
 
 ```bash
-gitpy init --repo-path /path/to/folder --remote git@github.com:your-org/repo.git --branch main
+gitloom init --repo-path /path/to/folder --remote git@github.com:your-org/repo.git --branch main
 ```
 
-### `gitpy sync`
+### `gitloom sync`
 
 Stages, commits, and pushes any changes.
 
 ```bash
-gitpy sync --repo-path /path/to/folder --message "Auto-sync" --branch main
+gitloom sync --repo-path /path/to/folder --message "Auto-sync" --branch main
 ```
 
-### `gitpy watch`
+### `gitloom watch`
 
 Runs a file watcher and syncs on changes.
 
 ```bash
-gitpy watch --repo-path /path/to/folder --message "Auto-sync" --branch main
+gitloom watch --repo-path /path/to/folder --message "Auto-sync" --branch main
 ```
 
 ## Library usage
 
 ```python
-from gitpy.sync import sync_once, watch
+from gitloom.sync import sync_once, watch
 
 sync_once(repo_path=".", remote_url="git@github.com:your-org/repo.git")
 
